@@ -1,19 +1,13 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.novoda.bintray-release'
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
 repositories {
     maven {
         url "https://maven.google.com"
     }
-}
-
-ext {
-    VERSION = '0.0.1'
-    DESCRIPTION = 'A shared preference to save a phone number'
-    GROUPID = 'com.nfx.android'
-    ARTIFACTID = 'phone-number-preference'
-    GITREPO = 'https://github.com/nfxdevelopment/phone-number-preference.git'
-    PROJECTURL = 'https://github.com/nfxdevelopment/phone-number-preference'
 }
 
 android {
@@ -23,17 +17,26 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 26
-        version VERSION
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
-        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+
+    publish {
+        bintrayUser = properties.getProperty("bintray.user")
+        bintrayKey = properties.getProperty("bintray.apikey")
+        userOrg = 'nfxdevelopment'
+        groupId = 'com.nfx.android'
+        artifactId = 'phone-number-preference'
+        publishVersion = '0.0.1'
+        desc = 'A shared preference to save a phone number'
+        website = 'https://github.com/nfxdevelopment/phone-number-preference'
     }
 }
 
@@ -48,6 +51,3 @@ dependencies {
     testCompile 'junit:junit:4.12'
     testCompile "org.robolectric:robolectric:3.2.2"
 }
-
-apply from: 'install.gradle'
-apply from: 'bintray.gradle'
