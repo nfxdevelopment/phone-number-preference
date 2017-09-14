@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.nfx.android.phonenumberpreference.PhoneNumberPreference
+        android:defaultValue="@string/phone_number_default_value"
+        android:key="@string/phone_number"
+        android:summary="@string/phone_number_summary"
+        android:title="@string/phone_number_title"
+        app:pnp_default_phone_number="@string/phone_number_default_value"/>
+</PreferenceScreen>

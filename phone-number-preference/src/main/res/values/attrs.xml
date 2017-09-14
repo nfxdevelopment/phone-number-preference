@@ -1,0 +1,6 @@
+<resources>
+    <declare-styleable name="PhoneNumberPreference">
+        <attr name="pnp_default_phone_number" format="reference|string"/>
+        <attr name="pnp_view_enabled" format="reference|boolean"/>
+    </declare-styleable>
+</resources>

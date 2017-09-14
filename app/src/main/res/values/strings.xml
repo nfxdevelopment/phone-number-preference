@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PhoneNumberPreferenceSample</string>
+
+    <string name="phone_number">phone_number</string>
+    <string name="phone_number_summary">This is a phone number</string>
+    <string name="phone_number_title">Phone Number</string>
+    <string name="phone_number_default_value">123</string>
+    <string name="switch_to_compat">Switch To Compat</string>
+    <string name="switch_to_standard">Switch To Standard</string>
+</resources>
