@@ -9,7 +9,7 @@ repositories {
 
 ext {
     VERSION = '0.0.1'
-    DESCRIPTION = 'A shared preference which saves a phone number'
+    DESCRIPTION = 'A shared preference to save a phone number'
     GROUPID = 'com.nfx.android'
     ARTIFACTID = 'phone-number-preference'
     GITREPO = 'https://github.com/nfxdevelopment/phone-number-preference.git'
