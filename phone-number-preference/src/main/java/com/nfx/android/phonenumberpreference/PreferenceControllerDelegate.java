@@ -44,8 +44,12 @@ class PreferenceControllerDelegate implements View.OnClickListener  {
         if(attrs != null) {
             TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.PhoneNumberPreference);
             try {
-                phoneNumber =
+                String phoneNumber =
                         a.getString(R.styleable.PhoneNumberPreference_pnp_default_phone_number);
+                if(phoneNumber != null) {
+                    this.phoneNumber = phoneNumber;
+                }
+
                 isEnabled =
                         a.getBoolean(R.styleable.PhoneNumberPreference_pnp_view_enabled, true);
                 dialogStyle = DEFAULT_DIALOG_STYLE;
@@ -102,7 +106,7 @@ class PreferenceControllerDelegate implements View.OnClickListener  {
         this.dialogStyle = dialogStyle;
     }
 
-    public String getPhoneNumber() {
+    String getPhoneNumber() {
         return phoneNumber;
     }
 
@@ -117,7 +121,8 @@ class PreferenceControllerDelegate implements View.OnClickListener  {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             formattedPhoneNumber = PhoneNumberUtils.formatNumber(phoneNumber, Locale.getDefault().getCountry());
         } else {
-            formattedPhoneNumber = PhoneNumberUtils.formatNumber(phoneNumber); //Deprecated method
+            //noinspection deprecation
+            formattedPhoneNumber = PhoneNumberUtils.formatNumber(phoneNumber);
         }
         phoneNumberView.setText(formattedPhoneNumber);
     }

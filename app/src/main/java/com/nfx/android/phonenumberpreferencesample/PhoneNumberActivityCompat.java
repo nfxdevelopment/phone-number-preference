@@ -53,7 +53,7 @@ public class PhoneNumberActivityCompat extends AppCompatActivity implements View
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             // Load the preferences from an XML resource
-            addPreferencesFromResource(R.xml.preference_range_bar_compat);
+            addPreferencesFromResource(R.xml.preference_phone_number_compat);
         }
 
         @Override
