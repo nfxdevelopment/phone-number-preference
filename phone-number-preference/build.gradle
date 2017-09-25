@@ -34,7 +34,7 @@ android {
         userOrg = 'nfxdevelopment'
         groupId = 'com.nfx.android'
         artifactId = 'phone-number-preference'
-        publishVersion = '0.0.2'
+        publishVersion = '0.0.3'
         desc = 'A shared preference to save a phone number'
         website = 'https://github.com/nfxdevelopment/phone-number-preference'
     }
